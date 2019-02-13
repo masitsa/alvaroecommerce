@@ -1,0 +1,1 @@
+<h3>I have <?php echo $all_friends->num_rows();?> friends</h3>
