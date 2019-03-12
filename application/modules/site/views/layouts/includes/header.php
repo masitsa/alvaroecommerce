@@ -5,4 +5,8 @@
 <!-- Bootstrap core CSS -->
 <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+<?php if(isset($login)){?>
+<link href="<?php echo base_url();?>assets/themes/custom/login.css" rel="stylesheet">
+<?php } else{?>
 <link href="<?php echo base_url();?>assets/themes/custom/styles.css" rel="stylesheet">
+<?php }?>

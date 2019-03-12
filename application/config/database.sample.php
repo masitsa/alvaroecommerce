@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |				'ssl_ca'     - Path to the certificate authority file
 |				'ssl_capath' - Path to a directory containing trusted CA certificates in PEM format
 |				'ssl_cipher' - List of *allowed* ciphers to be used for the encryption, separated by colons (':')
-|				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not
+|				'ssl_verify' - TRUE/FALSE; Whether verify the server certificate or not ('mysqli' only)
 |
 |	['compress'] Whether or not to use client compression (MySQL only)
 |	['stricton'] TRUE/FALSE - forces 'Strict Mode' connections
@@ -70,16 +70,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
-$query_builder = TRUE;
+// $active_group = 'default';
+// $query_builder = TRUE;
+// // PHP Data Objects(PDO) Sample Code:
+// try {
+//     $conn = new PDO("sqlsrv:server = tcp:nanyukisql.database.windows.net,1433; Database = nanyukisql", "alvaro", "{your_password_here}");
+//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// }
+// catch (PDOException $e) {
+//     print("Error connecting to SQL Server.");
+//     die(print_r($e));
+// }
 
+// // SQL Server Extension Sample Code:
+// $connectionInfo = array("UID" => "alvaro@nanyukisql", "pwd" => "{your_password_here}", "Database" => "nanyukisql", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+// $serverName = "tcp:nanyukisql.database.windows.net,1433";
+// $conn = sqlsrv_connect($serverName, $connectionInfo);
+$active_group = 'default';
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'nanyukiappfactory-mysqldbserver.mysql.database.azure.com',
-	'username' => 'philip@nanyukiappfactory-mysqldbserver',
-	'password' => 'philip@#',
-	'database' => 'philipdb',
-	'dbdriver' => 'mysqli',
+	'dsn' => '',
+	'hostname' => 'nanyukisql.database.windows.net,1433',
+	'username' => 'alvaro@nanyukisql',
+	'password' => 'r6r5bb!!',
+	'database' => 'nanyukisql',
+	'dbdriver' => 'sqlsrv',
+	'port' 	=> 1433,
+	'autoinit' => FALSE,
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

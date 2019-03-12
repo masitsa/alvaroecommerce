@@ -24,4 +24,15 @@ class Site_model extends CI_Model
 		
 		return $field_name;
 	}
+	
+	public function count_items($table, $where, $limit = NULL)
+	{
+		if($limit != NULL)
+		{
+			$this->db->limit($limit);
+		}
+		$this->db->from($table);
+		$this->db->where($where);
+		return $this->db->count_all_results();
+	}
 }

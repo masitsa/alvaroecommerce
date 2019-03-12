@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/******
+* Auth Routes
+*****/
+$route['admin/login'] = 'auth/auth/login_admin';
+$route['friends/add-friend'] = 'friends/friends/add_friend';
+$route['friends'] = 'friends/friends/index';
+$route['friends/(:any)/(:any)/(:num)'] = 'friends/friends/index/$1/$2/$3';
+$route['friends/(:any)/(:any)'] = 'friends/friends/index/$1/$2';
