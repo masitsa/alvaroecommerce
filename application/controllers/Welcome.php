@@ -20,6 +20,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo "welcome";
+		echo "welcome <br/>";
+		$query = $this->db->query('SELECT TOP 1000 * FROM [dbo].[test]');
+
+		echo $query->num_rows();
+
+		$row = $query->row();
+		$name = $row->test_name;
+		echo "<br/>".$name;
 	}
 }

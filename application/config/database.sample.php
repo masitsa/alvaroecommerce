@@ -88,14 +88,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 $active_group = 'default';
 $db['default'] = array(
-	'dsn' => 'sqlsrv:server=tcp:nanyukisql.database.windows.net,1433;Database=nanyukisql',
+	'dsn' => 'Driver={ODBC Driver 13 for SQL Server};Server=tcp:nanyukisql.database.windows.net,1433;Database=nanyukisql;Uid=alvaro@nanyukisql;Pwd=r6r5bb!!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;',
 	'hostname' => 'nanyukisql.database.windows.net,1433',
-	'username' => 'alvaro@nanyukisql',
+	'username' => 'alvaro',
 	'password' => 'r6r5bb!!',
 	'database' => 'nanyukisql',
-	'dbdriver' => 'sqlsrv',
+	'dbdriver' => 'odbc',
 	// 'port' 	=> 1433,
-	'autoinit' => FALSE,
+	'autoinit' => TRUE,
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -104,7 +104,7 @@ $db['default'] = array(
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',
 	'swap_pre' => '',
-	'encrypt' => FALSE,
+	'encrypt' => TRUE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
