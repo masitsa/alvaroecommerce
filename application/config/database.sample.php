@@ -88,13 +88,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $conn = sqlsrv_connect($serverName, $connectionInfo);
 $active_group = 'default';
 $db['default'] = array(
-	'dsn' => '',
+	'dsn' => 'sqlsrv:server=tcp:nanyukisql.database.windows.net,1433;Database=nanyukisql',
 	'hostname' => 'nanyukisql.database.windows.net,1433',
 	'username' => 'alvaro@nanyukisql',
 	'password' => 'r6r5bb!!',
 	'database' => 'nanyukisql',
 	'dbdriver' => 'sqlsrv',
-	'port' 	=> 1433,
+	// 'port' 	=> 1433,
 	'autoinit' => FALSE,
 	'dbprefix' => '',
 	'pconnect' => FALSE,
